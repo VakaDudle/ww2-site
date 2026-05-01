@@ -1,0 +1,670 @@
+body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #f5f1e8;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background: linear-gradient(90deg, #e6dcc8, #d8cbb3);
+    padding: 25px;
+    border-bottom: 2px solid #b9a98a;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 90px;
+    filter: contrast(1.1);
+}
+
+.title-block h1 {
+    margin: 0;
+}
+
+.title-block p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+nav {
+    background: #efe7d8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid #c9b89a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    padding: 10px 14px;
+    background: #f7f2e9;
+    border-radius: 6px;
+    color: #2b2b2b;
+    text-decoration: none;
+    border: 1px solid #d2c3a8;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    background: #e6dcc8;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+    padding: 25px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background: #fffdf8;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    border: 1px solid #e0d3bc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    background: #d8cbb3;
+    color: #2b2b2b;
+    border: 1px solid #b9a98a;
+    padding: 10px 14px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #cbb99a;
+    transform: scale(1.03);
+}
+
+/* =========================
+   QUIZ COLORS
+========================= */
+button.correct {
+    background: #b7e4c7 !important;
+}
+
+button.wrong {
+    background: #f8ad9d !important;
+}
+
+/* =========================
+   ACCORDION
+========================= */
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.show {
+    max-height: 1200px;
+}
+
+/* =========================
+   IMAGES
+========================= */
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-top: 10px;
+    filter: contrast(1.05);
+}
+
+/* =========================
+   MAP
+========================= */
+.map-img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+
+.map-img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* =========================
+   FLEX ROW
+========================= */
+.row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* =========================
+   MEMORIALS
+========================= */
+.memorials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.mem-card {
+    background: #fffdf8;
+    padding: 15px;
+    border-radius: 10px;
+    width: 260px;
+    border: 1px solid #e0d3bc;
+    transition: 0.3s;
+}
+
+.mem-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #efe7d8;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #c9b89a;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    .logo-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    .card {
+        margin: 15px;
+    }
+}
+
+/* =========================
+   CANDLES (optional)
+========================= */
+.candle {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.candle.left { left: 10px; }
+.candle.right { right: 10px; }
+
+.candle img {
+    width: 400px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 25px rgba(255,140,60,0.6));
+}
+
+@media (max-width: 600px) {
+    .candle {
+        display: none;
+    }
+}
+/* ===== MEMORY CARD ===== */
+.mem-card {
+    background: #fffdf8;
+    padding: 15px;
+    border-radius: 12px;
+    width: 280px;
+    border: 1px solid #e0d3bc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.mem-card:hover {
+    transform: translateY(-6px);
+}
+
+/* IMAGE */
+.mem-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* SHORT TEXT */
+.short {
+    opacity: 0.8;
+    margin: 10px 0;
+}
+
+/* HIDDEN TEXT */
+.more-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.more-text.show {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.more-btn {
+    display: inline-block;
+    background: #d8cbb3;
+    border: 1px solid #b9a98a;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2b2b2b;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.more-btn:hover {
+    background: #cbb99a;
+    transform: translateY(-2px);
+}
+.memorials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap; /* ❗ запрещаем перенос */
+  overflow-x: auto;   /* если не влезет — появится прокрутка */
+  padding-bottom: 10px;
+}
+
+/* карточка */
+.mem-card {
+    width: 280px;
+    background: #fffdf8;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0d3bc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.mem-card:hover {
+    transform: translateY(-5px);
+}
+@media (max-width: 900px) {
+    .memorials {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mem-card {
+        width: 90%;
+    }
+}
+.memory-site-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto; /* 👈 центрирование */
+    padding: 12px 18px;
+    background: #d8cbb3;
+    color: #2b2b2b;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #b9a98a;
+    font-weight: 500;
+    transition: 0.25s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.memory-site-btn:hover {
+    background: #cbb99a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.btn-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #8b1e1e; /* под военную тематику */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-more:hover {
+  background-color: #a52a2a;
+  transform: scale(1.05);
+}
+.btn-more {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0 auto; /* вот это центрирует */
+  padding: 10px 16px;
+  background-color: #8b1e1e;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.map-img {
+  width: 100%;
+  max-width: 900px;   /* можно менять */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.controls {
+  margin-top: auto; /* прижимает кнопки вниз */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+#desc {
+  min-height: 50px;
+  text-align: center;
+}
+#mapImage {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;       /* фиксированная высота */
+  object-fit: cover;   /* чтобы не ломало пропорции */
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+#desc {
+  min-height: 60px;
+  text-align: center;
+}
+.controls {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalImg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transform-origin: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.85); /* вместо чёрного */
+  backdrop-filter: blur(3px);
+
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: transparent; /* полностью убрали фон */
+  
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+
+  color: white;
+  background: rgba(139, 30, 30, 0.95); /* красный под тематику */
+  
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  background: rgba(165, 42, 42, 1);
+}
+.modal-content {
+  position: relative;
+  z-index: 10;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.row .text {
+  flex: 1;
+}
+
+.row img {
+  width: 300px;
+  max-width: 40%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .row img {
+    width: 100%;
+  }
+}
+.card {
+  max-width: 900px;
+  margin: 15px auto;   /* одинаковые отступы между блоками */
+  padding: 15px;
+  box-sizing: border-box;
+}
+.page-title {
+  text-align: center;
+  margin: 20px 0;
+}
+.question {
+  margin-bottom: 20px;
+}
+
+.question div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.question button {
+  flex: 1 1 45%;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .question div {
+    grid-template-columns: 1fr;
+  }
+
+  .question button {
+    width: 100%;
+    max-width: 320px;   /* ограничение ширины */
+    margin: 0 auto;     /* центрирование */
+    display: block;
+  }
+}
+.test-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+
+  .card {
+    padding: 12px;
+    margin: 10px;
+  }
+
+  .question p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Кнопки ответов */
+  .question div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .question button {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* Кнопки результата */
+  .card > button,
+  .test-controls button {
+    width: 100%;
+    max-width: 320px;
+    margin: 6px auto;
+    display: block;
+  }
+
+  #result {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+.question {
+  margin-bottom: 18px;
+}
+.close-map-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.card {
+    position: relative;
+}
+.card {
+    position: relative;
+}
+.modal {
+    z-index: 10000;
+}
+
+.close-map-btn {
+    z-index: 10001;
+}
